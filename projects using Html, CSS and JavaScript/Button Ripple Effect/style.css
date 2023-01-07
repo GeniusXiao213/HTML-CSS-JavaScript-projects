@@ -1,0 +1,49 @@
+body{
+    background-color: white;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    height:100vh;
+    align-items: center;
+    
+    
+}
+
+.btn{
+    background-color: pink;
+    padding: 20px 40px;
+    border-radius: 10px;
+    font-family: sans-serif;
+    text-decoration: none;
+    color: black;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn span {
+    position: relative;
+    z-index: 1;
+}
+
+
+/*creates a pseudo-element that is the first child of the selected element. It is often used to add cosmetic content to an element with the content property. It is inline by default.*/
+
+.btn::before{
+    content: "";
+    background-color: aqua;
+    
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: var(--xPos);
+    top: var(--yPos);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    transition: width 0.5s, height 0.5s;
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+  }
